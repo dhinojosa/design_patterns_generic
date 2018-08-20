@@ -58,7 +58,8 @@ public class IteratorTest {
         listIterator.next();
         listIterator.next();
         listIterator.next();
-        listIterator.add("Nice");
+        //listIterator.add("Nice"); Unsupported
+        
         listIterator.previous();
         listIterator.previous();
         listIterator.next();
