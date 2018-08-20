@@ -2,7 +2,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>com.xyzcorp</groupId>
    <artifactId>design_patterns_training</artifactId>
-   <version>1.0_SNAPSHOT</version>
+   <version>1.0-SNAPSHOT</version>
 
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -75,6 +75,11 @@
          <artifactId>spring-jdbc</artifactId>
          <version>5.0.7.RELEASE</version>
       </dependency>
+      <dependency>
+         <groupId>com.google.guava</groupId>
+         <artifactId>guava</artifactId>
+         <version>26.0-jre</version>
+      </dependency>
    </dependencies>
    <build>
       <plugins>
@@ -136,6 +141,14 @@
    </build>
    <reporting>
       <plugins>
+         <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>10</source>
+               <target>10</target>
+               <compilerArgument>-proc:none</compilerArgument>
+            </configuration>
+         </plugin>
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-report-plugin</artifactId>
