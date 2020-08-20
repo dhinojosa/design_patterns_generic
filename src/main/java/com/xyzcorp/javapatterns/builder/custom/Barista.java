@@ -14,5 +14,7 @@ public class Barista {
                         .addSprinkles()
                         .addSkimMilk()
                         .build();
+
+        System.out.println(drink);
     }
 }

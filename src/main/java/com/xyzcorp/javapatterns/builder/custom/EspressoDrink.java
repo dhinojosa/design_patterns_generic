@@ -19,4 +19,16 @@ public class EspressoDrink {
         this.decaf = espressoDrinkBuilder.isDecaf();
         this.whip = espressoDrinkBuilder.isWhip();
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("EspressoDrink{");
+        sb.append("shots=").append(shots);
+        sb.append(", skimMilk=").append(skimMilk);
+        sb.append(", sprinkles=").append(sprinkles);
+        sb.append(", decaf=").append(decaf);
+        sb.append(", whip=").append(whip);
+        sb.append('}');
+        return sb.toString();
+    }
 }
