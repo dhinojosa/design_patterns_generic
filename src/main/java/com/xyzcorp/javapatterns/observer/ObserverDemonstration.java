@@ -9,7 +9,7 @@ public class ObserverDemonstration {
 
     public static void main(String[] args) {
 
-        RSSFeed johnsFeed = new RSSFeed();
+        RSSFeed johnsFeed = new RSSFeedImpl();
 
         johnsFeed.addObserver(new ConsoleOutObserver("Console 1"));
         RSSObserver console2 = johnsFeed.addObserver(new ConsoleOutObserver("Console 2"));
