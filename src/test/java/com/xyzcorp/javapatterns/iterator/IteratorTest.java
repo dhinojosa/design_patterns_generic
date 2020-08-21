@@ -12,7 +12,7 @@ public class IteratorTest {
 
     @Test
     public void testIteratorFromList() {
-        var stringList = List.of("Foo", "Bar", "Baz", "Qux", "Quux");
+        List<String> stringList = Arrays.asList("Foo", "Bar", "Baz", "Qux", "Quux");
         Iterator<String> iterator = stringList.iterator();
 
         String value1 = iterator.next();
@@ -24,7 +24,7 @@ public class IteratorTest {
 
     @Test
     public void testIteratorFromListTrickQuestion() {
-        var stringList = List.of("Foo", "Bar", "Baz", "Qux", "Quux");
+        List<String> stringList = Arrays.asList("Foo", "Bar", "Baz", "Qux", "Quux");
         String value1 = stringList.iterator().next();
         String value2 = stringList.iterator().next();
 
@@ -34,8 +34,8 @@ public class IteratorTest {
 
     @Test
     public void testIteratorUsingWhileLoop() {
-        var iterator = List.of("Foo", "Bar", "Baz", "Qux", "Quux").iterator();
-        var result = new ArrayList<String>();
+        Iterator<String> iterator = Arrays.asList("Foo", "Bar", "Baz", "Qux", "Quux").iterator();
+        List<String> result = new ArrayList<String>();
         while(iterator.hasNext()) {
             result.add(iterator.next());
         }
@@ -45,8 +45,8 @@ public class IteratorTest {
     @SuppressWarnings("UseBulkOperation")
     @Test
     public void testIteratorWithEnhancedForLoop() {
-        var list = List.of("Foo", "Bar", "Baz", "Qux", "Quux");
-        var result = new ArrayList<String>();
+        List<String> list = Arrays.asList("Foo", "Bar", "Baz", "Qux", "Quux");
+        List<String> result = new ArrayList<String>();
         for (String s : list) {
             result.add(s);
         }
@@ -55,8 +55,8 @@ public class IteratorTest {
 
     @Test
     public void testListIteratorLoop() {
-        var list = List.of("Foo", "Bar", "Baz", "Qux", "Quux");
-        var listIterator = list.listIterator();
+        List<String>  list = Arrays.asList("Foo", "Bar", "Baz", "Qux", "Quux");
+        ListIterator<String> listIterator = list.listIterator();
         listIterator.next();
         listIterator.next();
         listIterator.next();
@@ -71,12 +71,12 @@ public class IteratorTest {
 
     @Test
     public void testListIteratorLoopWithModification() {
-        var list = new ArrayList<String>();
+        List<String> list = new ArrayList<String>();
         list.add("One");
         list.add("Two");
         list.add("Three");
         list.add("Four");
-        var listIterator = list.listIterator();
+        ListIterator<String> listIterator = list.listIterator();
         listIterator.next(); //One
         listIterator.next(); //Two
         listIterator.add("Nice");
@@ -86,16 +86,17 @@ public class IteratorTest {
         listIterator.previous(); //Nice
         listIterator.next(); //Two
         assertEquals("Three", listIterator.next());
-        assertEquals(list, List.of("One", "Two", "Nice", "Three", "Four"));
+        assertEquals(list, Arrays.asList("One", "Two", "Nice", "Three", "Four"));
     }
 
     @Test
     public void testSpliteratorWithForEachRemaining() {
-        var list = IntStream.range(1, 1000).boxed().collect(Collectors.toList());
-        var split1 = list.spliterator();
-        var split2 = split1.trySplit();
-        var split3 = split2.trySplit();
-        var split4 = split1.trySplit();
+        List<Integer> list = IntStream.range(1, 1000).boxed().collect(Collectors.toList());
+        Spliterator<Integer> split1 = list.spliterator();
+        Spliterator<Integer> split2 = split1.trySplit();
+        Spliterator<Integer> split3 = split2.trySplit();
+        Spliterator<Integer> split4;
+        split4 = split1.trySplit();
         split1.forEachRemaining(x -> System.out.println("S1 " + x));
         split2.forEachRemaining(x -> System.out.println("S2 " + x));
         split3.forEachRemaining(x -> System.out.println("S3 " + x));
@@ -104,9 +105,9 @@ public class IteratorTest {
 
     @Test
     public void testSpliteratorWithTryAdvance() {
-        var list = List.of("Foo", "Bar", "Baz", "Qux", "Quux");
-        var split1 = list.spliterator();
-        var split2 = split1.trySplit();
+        List<String> list = Arrays.asList("Foo", "Bar", "Baz", "Qux", "Quux");
+        Spliterator<String> split1 = list.spliterator();
+        Spliterator<String> split2 = split1.trySplit();
         split1.tryAdvance(x -> System.out.println("S1 " + x)); //Baz
         split2.tryAdvance(x -> System.out.println("S2 " + x)); //Foo
     }
