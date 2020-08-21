@@ -3,6 +3,8 @@ package com.xyzcorp.javapatterns.iterator;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
 
@@ -59,7 +61,7 @@ public class IteratorTest {
         listIterator.next();
         listIterator.next();
         //listIterator.add("Nice"); Unsupported
-        
+
         listIterator.previous();
         listIterator.previous();
         listIterator.next();
@@ -89,11 +91,15 @@ public class IteratorTest {
 
     @Test
     public void testSpliteratorWithForEachRemaining() {
-        var list = List.of("Foo", "Bar", "Baz", "Qux", "Quux");
+        var list = IntStream.range(1, 1000).boxed().collect(Collectors.toList());
         var split1 = list.spliterator();
         var split2 = split1.trySplit();
+        var split3 = split2.trySplit();
+        var split4 = split1.trySplit();
         split1.forEachRemaining(x -> System.out.println("S1 " + x));
         split2.forEachRemaining(x -> System.out.println("S2 " + x));
+        split3.forEachRemaining(x -> System.out.println("S3 " + x));
+        split4.forEachRemaining(x -> System.out.println("S4 " + x));
     }
 
     @Test
