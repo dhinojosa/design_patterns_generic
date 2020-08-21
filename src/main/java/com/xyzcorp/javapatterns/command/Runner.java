@@ -8,12 +8,16 @@ public class Runner {
     public static void main(String[] args) {
         Map<String, Action> commandMap = new HashMap<>();
         Target target = new Target();
-        Action action1 = () -> {
-            target.displayTime(LocalDateTime.now());
-        };
-        Action action2 = new QueryTimeAction(target);
+
+        Action action1 = () ->
+                target.displayTime(LocalDateTime.now());
+        Action action2 = () ->
+                target.displayTime(LocalDateTime.now().minusHours(3));
+
         commandMap.put("showTime", action1);
-        commandMap.put("showTime2", action2);
+        commandMap.put("showTimeMinus3Hours", action2);
+
         commandMap.get("showTime").execute();
+        commandMap.get("showTimeMinus3Hours").execute();
     }
 }
