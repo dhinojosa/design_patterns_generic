@@ -25,11 +25,12 @@ public class IteratorTest {
     @Test
     public void testIteratorFromListTrickQuestion() {
         var stringList = List.of("Foo", "Bar", "Baz", "Qux", "Quux");
-        String value1 = stringList.iterator().next();
-        String value2 = stringList.iterator().next();
+        Iterator<String> iterator = stringList.iterator();
+        String value1 = iterator.next();
+        String value2 = iterator.next();
 
         assertEquals(value1, "Foo");
-        assertEquals(value2, "Foo");
+        assertEquals(value2, "Bar");
     }
 
     @Test

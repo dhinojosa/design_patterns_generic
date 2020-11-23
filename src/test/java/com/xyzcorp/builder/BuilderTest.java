@@ -8,7 +8,10 @@ public class BuilderTest {
     @Test
     public void testPetals() {
         Flower flower =
-                Flower.builder().petals(7).build();
+                Flower
+                    .builder()
+                    .petals(7)
+                    .build();
 
         assertEquals(7, flower.getPetals());
     }

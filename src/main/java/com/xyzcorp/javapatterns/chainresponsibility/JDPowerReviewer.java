@@ -14,8 +14,10 @@ public class JDPowerReviewer implements Reviewer {
 
     @Override
     public void recommend(Car car) {
-        if (car.rearCamera() && car.driveLaneAssist() && car.powerSteering())
-            car.addRecommendation("CarFax");
+        if (car.rearCamera() &&
+            car.driveLaneAssist() &&
+            car.powerSteering())
+            car.addRecommendation("JD Power");
         if (nextReviewer != null) nextReviewer.recommend(car);
     }
 }

@@ -51,7 +51,7 @@ public class BroadcastTest {
         }
 
         public void broadcastToAll() {
-            this.eventBus.post(new BroadcastEvent("Canada is on fire"));
+            this.eventBus.post(new BroadcastEvent("Colorado on Fire"));
         }
     }
 
@@ -111,10 +111,10 @@ public class BroadcastTest {
         broadcaster.broadcastToAll();
         broadcaster.broadcastToAll();
 
-        eventBus.post("Justin Bieber must go to prison");
-        eventBus.post("Justin Bieber must go to prison");
-        eventBus.post("Justin Bieber must go to prison");
-        eventBus.post("Justin Bieber must go to prison");
+        eventBus.post("Justin Bieber deserves a nice handshake after the plague.");
+        eventBus.post("Justin Bieber deserves a nice handshake after the plague.");
+        eventBus.post("Justin Bieber deserves a nice handshake after the plague.");
+        eventBus.post("Justin Bieber deserves a nice handshake after the plague.");
 
         System.out.println(subscriber.getMessages());
         System.out.println("-----");

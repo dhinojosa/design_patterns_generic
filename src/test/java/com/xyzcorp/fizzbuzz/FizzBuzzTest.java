@@ -1,61 +1,44 @@
 package com.xyzcorp.fizzbuzz;
 
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FizzBuzzTest {
+
     @Test
-    public void testConvertOf1() {
+    void test1() {
+        //How is it going to look?
+        //Static method? State?
         String result = FizzBuzz.convert(1);
-        assertEquals("1", result);
+        assertThat(result).isEqualTo("1");
     }
 
     @Test
-    public void testConvertOf2() {
+    void test2() {
+        //How is it going to look?
+        //Static method? State?
         String result = FizzBuzz.convert(2);
-        assertEquals("2", result);
+        assertThat(result).isEqualTo("2");
     }
 
     @Test
-    public void testConvertOf3() {
+    void test3() {
+        //How is it going to look?
+        //Static method? State?
         String result = FizzBuzz.convert(3);
-        assertEquals("Fizz", result);
+        assertThat(result).isEqualTo("Fizz");
     }
 
     @Test
-    public void testConvertOf5() {
+    void test5() {
         String result = FizzBuzz.convert(5);
-        assertEquals("Buzz", result);
+        assertThat(result).isEqualTo("Buzz");
     }
 
     @Test
-    public void testConvertOf6() {
-        String result = FizzBuzz.convert(6);
-        assertEquals("Fizz", result);
-    }
-
-    @Test
-    public void testConvertOf10() {
-        String result = FizzBuzz.convert(10);
-        assertEquals("Buzz", result);
-    }
-
-    @Test
-    public void testConvertOf15() {
+    void test15() {
         String result = FizzBuzz.convert(15);
-        assertEquals("FizzBuzz", result);
-    }
-
-    @Test
-    public void testConvertOf30() {
-        String result = FizzBuzz.convert(30);
-        assertEquals("FizzBuzz", result);
-    }
-
-    @Test
-    public void testConvertOfNeg1() {
-        String result = FizzBuzz.convert(-1);
-        assertEquals("-1", result);
+        assertThat(result).isEqualTo("FizzBuzz");
     }
 }
