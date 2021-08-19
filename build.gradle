@@ -1,4 +1,7 @@
-apply plugin: "java"
+plugins {
+    id 'java'
+    id 'jacoco'
+}
 
 version = "1.0"
 description = "design_patterns_training"
@@ -8,7 +11,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.google.guava:guava:26.0-jre'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testImplementation 'org.assertj:assertj-core:3.10.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
 
