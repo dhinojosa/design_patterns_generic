@@ -6,9 +6,8 @@ package com.xyzcorp.javapatterns.abstractfactory.classic;
  * Time: 10:29 PM
  */
 public class Client {
-
-
     public Client(RegistrationDAOFactory factory) {
         RegistrationDAO registrationDAO = factory.create();
+        registrationDAO.persist(new Registration());
     }
 }
