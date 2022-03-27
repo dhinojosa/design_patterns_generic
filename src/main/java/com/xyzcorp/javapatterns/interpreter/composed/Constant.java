@@ -10,11 +10,7 @@ public class Constant implements Expression {
         this.number = number;
     }
 
-    public Expression interpret() {
-        return this;
-    }
-
-    public int getNumber() {
+    public int interpret() {
         return number;
     }
 }
