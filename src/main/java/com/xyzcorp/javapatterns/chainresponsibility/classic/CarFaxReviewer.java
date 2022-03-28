@@ -1,4 +1,4 @@
-package com.xyzcorp.javapatterns.chainresponsibility;
+package com.xyzcorp.javapatterns.chainresponsibility.classic;
 
 public class CarFaxReviewer implements Reviewer {
 

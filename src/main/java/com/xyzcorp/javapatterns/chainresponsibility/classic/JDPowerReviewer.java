@@ -1,8 +1,8 @@
-package com.xyzcorp.javapatterns.chainresponsibility;
+package com.xyzcorp.javapatterns.chainresponsibility.classic;
 
 public class JDPowerReviewer implements Reviewer {
 
-    private Reviewer nextReviewer;
+    private final Reviewer nextReviewer;
 
     public JDPowerReviewer(Reviewer reviewer) {
         this.nextReviewer = reviewer;

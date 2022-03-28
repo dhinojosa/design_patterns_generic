@@ -1,4 +1,4 @@
-package com.xyzcorp.javapatterns.chainresponsibility;
+package com.xyzcorp.javapatterns.chainresponsibility.classic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class Runner {
 
     public static void main(String[] args) {
         Car car = new Car() {
-            private List<String> recommendations = new ArrayList<String>();
+            private final List<String> recommendations = new ArrayList<>();
 
             @Override
             public String getMake() {

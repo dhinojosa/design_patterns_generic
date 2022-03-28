@@ -1,8 +1,8 @@
-package com.xyzcorp.javapatterns.chainresponsibility;
+package com.xyzcorp.javapatterns.chainresponsibility.classic;
 
 public class CarAndBuyerReviewer implements Reviewer {
 
-    private Reviewer nextReviewer;
+    private final Reviewer nextReviewer;
 
     public CarAndBuyerReviewer(Reviewer nextReviewer) {
         this.nextReviewer = nextReviewer;
