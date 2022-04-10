@@ -25,7 +25,7 @@ public class Runner {
             else return Optional.empty();
         };
 
-        Stream<Reviewer> reviewerStream = Stream.of(carAndBuyer, carFax);
+        Stream<Reviewer> reviewerStream = Stream.of(carAndBuyer, carFax, jdPower);
         Car car = new Car("Honda", "Accord", 2011, true, true, false, true, true);
         List<String> approvals =
             reviewerStream.flatMap(reviewer -> reviewer.review(car).stream()).toList();
