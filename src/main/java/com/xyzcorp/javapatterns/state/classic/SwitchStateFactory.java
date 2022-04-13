@@ -1,7 +1,7 @@
-package com.xyzcorp.javapatterns.state;
+package com.xyzcorp.javapatterns.state.classic;
 
 public class SwitchStateFactory {
-    private SwitchStateContext switchStateContext;
+    private final SwitchStateContext switchStateContext;
     private SwitchState onState;
     private SwitchState offState;
 
