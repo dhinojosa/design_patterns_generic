@@ -1,4 +1,4 @@
-package com.xyzcorp.javapatterns.strategy;
+package com.xyzcorp.javapatterns.strategy.classic;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.xyzcorp.javapatterns.strategy;
+package com.xyzcorp.javapatterns.strategy.classic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,12 @@ import java.util.List;
  * Time: 12:54 PM
  */
 public class Client {
-    
+
     public static void main(String[] args) {
         NumberAccumulator numberAccumulator = new NumberAccumulator();
         numberAccumulator.setAccumulatorStrategy(new ProductAccumulator());
-        
-        List<Integer> integers = new ArrayList<Integer>();
+
+        List<Integer> integers = new ArrayList<>();
         integers.add(1);
         integers.add(2);
         integers.add(3);

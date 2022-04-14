@@ -1,4 +1,4 @@
-package com.xyzcorp.javapatterns.strategy;
+package com.xyzcorp.javapatterns.strategy.classic;
 
 /**
  * User: Daniel Hinojosa (dhinojosa@evolutionnext.com)
@@ -6,5 +6,5 @@ package com.xyzcorp.javapatterns.strategy;
  * Time: 12:51 PM
  */
 public interface AccumulatorStrategy {
-    public Integer process(Integer a, Integer b);
+    Integer process(Integer a, Integer b);
 }
