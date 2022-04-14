@@ -1,6 +1,7 @@
 package com.xyzcorp.javapatterns.visitor.functional;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,17 +13,21 @@ public class Runner {
         };
 
         List<Animal> animals =
-            Stream.of(new Bear(false), new Zebra(false)).map(animalVisitor::visit).toList();
+            Stream.of(new Bear(false), new Zebra(false))
+                  .map(animalVisitor::visit).toList();
+
         System.out.println(animals);
 
+        Function<Animal, String> convertToXML =
+            animal -> switch (animal) {
+                case Bear b -> "<bear/>";
+                case Zebra z -> "<zebra/>";
+            };
+
         String result =
-            Stream.of(new Bear(false), new Zebra(false)).map(
-                animal -> switch(animal) {
-                    case Bear b -> "<bear/>";
-                    case Zebra z -> "<zebra/>";
-                    default ->
-                        throw new IllegalStateException("Unexpected value: " + animal);
-                }).collect(Collectors.joining("\n"));
+            Stream.of(new Bear(false), new Zebra(false)).map(convertToXML)
+                  .collect(Collectors.joining("\n\t", "<animal>\n\t", "\n" +
+                      "</animal>"));
         System.out.println(result);
     }
 }
