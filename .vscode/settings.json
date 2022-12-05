@@ -1,3 +1,16 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.nullable": [
+
+        "javax.annotation.Nullable",
+        "org.eclipse.jdt.annotation.Nullable",
+        "org.springframework.lang.Nullable"
+    ],
+    "java.configuration.runtimes": [
+        {
+          "name": "JavaSE-19",
+          "path": "/home/gitpod/.sdkman/candidates/java/19-open",
+          "default": true
+        }
+    ]
 }
