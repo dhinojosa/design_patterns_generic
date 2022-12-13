@@ -1,7 +1,7 @@
-package com.xyzcorp.javapatterns.decorator.application;
+package com.xyzcorp.javapatterns.composite;
 
-import com.xyzcorp.javapatterns.decorator.application.domain.Employee;
-import com.xyzcorp.javapatterns.decorator.application.domain.EmployeeDAO;
+import com.xyzcorp.javapatterns.composite.domain.Employee;
+import com.xyzcorp.javapatterns.composite.domain.EmployeeDAO;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.xyzcorp.javapatterns.decorator.application.domain;
+package com.xyzcorp.javapatterns.composite.domain;
 
 public class EmployeeService {
     private EmployeeDAO employeeDAO;
