@@ -20,7 +20,6 @@ public class LoggingObserver implements RSSObserver {
     }
 
     public void update(RSSEntry entry) {
-
         try {
             log.write(entry.getValue());
             log.write('\n');

@@ -5,7 +5,7 @@ package com.xyzcorp.javapatterns.observer.classic;
  */
 public class ConsoleOutObserver implements RSSObserver {
 
-    private String name;
+    private final String name;
 
     public ConsoleOutObserver(String name) {
         this.name = name;
