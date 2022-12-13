@@ -2,12 +2,12 @@ package com.xyzcorp.javapatterns.state.functional;
 
 public record Won() implements Score {
     @Override
-    public Score wins(Score opponentsScore) {
+    public Score winsRound(Score opponentsScore) {
         return this;
     }
 
     @Override
-    public Score loses(Score opponentsScore) {
+    public Score losesRound(Score opponentsScore) {
         return this;
     }
 }

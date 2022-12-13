@@ -2,7 +2,7 @@ package com.xyzcorp.javapatterns.state.functional;
 
 public record Fifteen() implements Score {
     @Override
-    public Score wins(Score opponentsScore) {
+    public Score winsRound(Score opponentsScore) {
         return switch (opponentsScore) {
             case Won w -> this;
             case Lost s -> this;
@@ -14,7 +14,7 @@ public record Fifteen() implements Score {
     }
 
     @Override
-    public Score loses(Score opponentsScore) {
+    public Score losesRound(Score opponentsScore) {
         return this;
     }
 }
