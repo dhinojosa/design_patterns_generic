@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FunctionalDesignPatterns {
+public class FunctionalConstructTest {
 
     // The Functional Design Patterns
     // Monoid  -> append
@@ -19,6 +19,7 @@ public class FunctionalDesignPatterns {
     // [Harvey] map (Cat c -> c.applyCollar(collar))
     // Observable[Integer], Flux[String], List[Employee], Future[Cow],
     // Optional[Cat], Stream[Capybara] do contain map, flatMap
+
     @Test
     void testFunctorInAStream() {
         List<Integer> result =
@@ -58,7 +59,8 @@ public class FunctionalDesignPatterns {
     @Test
     void testMonad() {
         Stream<Integer> integerStream =
-                Stream.of(1, 2, 3, 4).flatMap(x -> Stream.of(-x, x, x + 1));
+                Stream.of(1, 2, 3, 4)
+                      .flatMap(x -> Stream.of(-x, x, x + 1));
         System.out.println(integerStream.collect(Collectors.toList()));
     }
 
@@ -72,14 +74,15 @@ public class FunctionalDesignPatterns {
     @Test
     void testSkippingBadStuff() {
         Stream<Integer> integerStream = Stream.of(10, 1, 20, 0, 5, 25);
-        List<Integer> result = integerStream.flatMap(x -> {
+        Stream<Integer> mappedStream = integerStream.flatMap(x -> {
             try {
                 return Stream.of(100 / x);
             } catch (ArithmeticException ae) {
                 return Stream.empty();
             }
-        }).collect(Collectors.toList());
+        });
 
+        List<Integer> result = mappedStream.collect(Collectors.toList());
         assertThat(result).isEqualTo(List.of(10, 100, 5, 20, 4));
     }
 }
