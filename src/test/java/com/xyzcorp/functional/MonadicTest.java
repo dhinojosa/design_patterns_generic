@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FunctionalConstructTest {
+public class MonadicTest {
 
     // The Functional Design Patterns
     // Monoid  -> append
