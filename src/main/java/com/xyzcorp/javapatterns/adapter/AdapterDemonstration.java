@@ -5,14 +5,14 @@ package com.xyzcorp.javapatterns.adapter;
  */
 public class AdapterDemonstration {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
-        CelciusThermometer celciusThermometer = new CelciusThermometer(34);
+        CelsiusThermometer celsiusThermometer = new CelsiusThermometer(34);
 
-        FahrenheitThermometer thermometer = new CelciusToFahrenheitAdapter(celciusThermometer);
+        FahrenheitThermometer thermometer = new CelsiusToFahrenheitAdapter(celsiusThermometer);
 
         System.out.println(
-                "Celcius: " + celciusThermometer.getTemperateInC() +
+                "Celcius: " + celsiusThermometer.getTemperateInC() +
                         " Fahrenheit: " + thermometer.getTemperateInF());
     }
 }

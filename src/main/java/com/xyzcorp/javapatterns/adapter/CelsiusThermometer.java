@@ -3,11 +3,11 @@ package com.xyzcorp.javapatterns.adapter;
 /**
  * @author John Ericksen
  */
-public class CelciusThermometer {
+public class CelsiusThermometer {
 
-    private double temp;
+    private final double temp;
 
-    public CelciusThermometer(double temp) {
+    public CelsiusThermometer(double temp) {
         this.temp = temp;
     }
 
