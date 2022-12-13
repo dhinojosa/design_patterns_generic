@@ -21,7 +21,7 @@ public class Runner {
 
         Reviewer jdPower = car -> {
             if (car.rearCamera() && car.driveLaneAssist() && car.powerSteering())
-                return Optional.of("CarFax");
+                return Optional.of("JDPower");
             else return Optional.empty();
         };
 
