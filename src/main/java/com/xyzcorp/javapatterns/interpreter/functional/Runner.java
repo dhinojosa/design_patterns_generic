@@ -2,7 +2,8 @@ package com.xyzcorp.javapatterns.interpreter.functional;
 
 public class Runner {
     public static void main(String[] args) {
-        Expression expression = new Multiply(new Constant(40), new Sum(new Constant(40), new Constant(60)));
+        Expression expression = new Multiply(new Constant(40),
+            new Sum(new Constant(40), new Constant(60)));
         System.out.println(evaluate(expression));
     }
 
