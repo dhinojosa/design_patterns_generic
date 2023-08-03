@@ -26,7 +26,7 @@ public class MonadicTest {
                 Stream.of(1, 2, 3, 4)
                       .map(x -> x * 10) //functor = map
                       .collect(Collectors.toList());
-        assertThat(result).contains(1,2,3,4);
+        assertThat(result).contains(10,20,30,40);
     }
 
     @Test
