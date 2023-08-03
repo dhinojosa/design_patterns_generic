@@ -2,13 +2,13 @@ package com.xyzcorp.javapatterns.state.functional;
 
 public final class Advantage implements Score {
     @Override
-    public Score winsRound(Score opponentsScore) {
+    public Score wins(Score opponentsScore) {
 
         return new Won();
     }
 
     @Override
-    public Score losesRound(Score opponentsScore) {
+    public Score loses(Score opponentsScore) {
         return new Forty();
     }
 }
