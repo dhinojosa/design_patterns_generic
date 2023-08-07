@@ -1,8 +1,9 @@
 tasks:
-  - before: sdk install java 19-open < /dev/null
+  - before: sdk install java 20-open < /dev/null
     init: mvn install -DskipTests=false
 vscode:
   extensions:
     - redhat.java
     - vscjava.vscode-java-test
     - vscjava.vscode-java-debug
+    - vscjava.vscode-java-pack
