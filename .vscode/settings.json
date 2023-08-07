@@ -12,5 +12,6 @@
           "path": "/home/gitpod/.sdkman/candidates/java/19-open",
           "default": true
         }
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
