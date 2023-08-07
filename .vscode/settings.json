@@ -8,7 +8,7 @@
     ],
     "java.configuration.runtimes": [
         {
-          "name": "JavaSE-19",
+          "name": "JavaSE-20",
           "path": "/home/gitpod/.sdkman/candidates/java/20-open",
           "default": true
         }
