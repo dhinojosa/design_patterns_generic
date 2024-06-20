@@ -8,9 +8,10 @@
     ],
     "java.configuration.runtimes": [
         {
-          "name": "JavaSE-19",
-          "path": "/home/gitpod/.sdkman/candidates/java/19-open",
+          "name": "JavaSE-20",
+          "path": "/home/gitpod/.sdkman/candidates/java/20-tem",
           "default": true
         }
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
