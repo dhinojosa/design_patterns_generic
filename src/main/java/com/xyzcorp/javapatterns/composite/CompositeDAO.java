@@ -5,11 +5,11 @@ import com.xyzcorp.javapatterns.composite.domain.EmployeeDAO;
 
 import java.util.List;
 
-public class MulticastDAO implements EmployeeDAO {
+public class CompositeDAO implements EmployeeDAO {
 
     private final List<EmployeeDAO> list;
 
-    public MulticastDAO(List<EmployeeDAO> list) {
+    public CompositeDAO(List<EmployeeDAO> list) {
         this.list = list;
     }
 
