@@ -1,5 +1,7 @@
 package com.xyzcorp.reactive;
 
+import io.reactivex.BackpressureStrategy;
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
 import org.junit.jupiter.api.Test;
@@ -7,14 +9,14 @@ import org.junit.jupiter.api.Test;
 public class ReactiveTest {
     @Test
     void testReactiveUsingRXJava() {
-        Observable<Long> longObservable =
-            Observable.create(emitter -> {
+        Flowable<Long> longObservable =
+            Flowable.create(emitter -> {
                 emitter.onNext(100L);
                 emitter.onNext(140L);
                 emitter.onNext(290L);
                 emitter.onNext(10L);
                 emitter.onComplete();
-            });
+            }, BackpressureStrategy.LATEST);
 
         longObservable
             .map(x -> x * 10)
