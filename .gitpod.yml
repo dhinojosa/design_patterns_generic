@@ -1,5 +1,5 @@
 tasks:
-  - before: sdk install java 19-open < /dev/null
+  - before: sdk install java 22-open < /dev/null
     init: mvn install -DskipTests=false
 vscode:
   extensions:
