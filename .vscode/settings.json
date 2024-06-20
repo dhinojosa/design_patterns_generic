@@ -8,8 +8,8 @@
     ],
     "java.configuration.runtimes": [
         {
-          "name": "JavaSE-20",
-          "path": "/home/gitpod/.sdkman/candidates/java/20-tem",
+          "name": "JavaSE-22",
+          "path": "/home/gitpod/.sdkman/candidates/java/22-open",
           "default": true
         }
     ],
